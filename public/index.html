@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pass The Light</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="public-page">
+        <section class="hero-card fade-in" id="hero-card">
+          <div class="hero-shine"></div>
+          <img id="hero-image" class="hero-image hidden" alt="Hero artwork">
+          <h1 id="hero-title">PASS THE LIGHT</h1>
+          <p id="hero-quote">To pass the light, you must BE the light.</p>
+        </section>
+
+        <section class="instructions fade-in">
+          <p class="section-eyebrow">INSTRUCTIONS:</p>
+          <ul id="instructions-list"></ul>
+        </section>
+
+        <section class="globe-section fade-in" id="globe-section">
+          <div class="globe-copy">
+            <p class="section-eyebrow">WORLD LIGHT</p>
+            <h2 class="globe-heading">Place a point of light on the globe.</h2>
+            <p class="globe-description">
+              Rotate the world, zoom in, and choose a place to leave a small white light for everyone to see.
+            </p>
+          </div>
+
+          <div class="globe-shell">
+            <canvas
+              id="globe-canvas"
+              class="globe-canvas"
+              width="520"
+              height="520"
+              aria-label="Interactive globe showing lights around the world"
+            ></canvas>
+
+            <div class="globe-panel">
+              <p class="globe-selected" id="globe-selected">No location selected yet.</p>
+              <button class="primary-button globe-button" id="globe-submit-button" type="button" disabled>
+                Place light
+              </button>
+              <p class="globe-status" id="globe-status" aria-live="polite"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="counter-section fade-in">
+          <button class="counter-card" id="counter-button" type="button" aria-live="polite">
+            <span class="counter-reflection"></span>
+            <span class="counter-value" id="counter-value">100,000</span>
+            <span class="counter-label" id="counter-label">חסדים טובים</span>
+          </button>
+          <p class="counter-description" id="counter-description">Good deeds shared so far.</p>
+          <p class="counter-status" id="counter-status"></p>
+        </section>
+
+        <section class="gallery-section fade-in" id="gallery-section">
+          <div class="gallery-grid" id="gallery-grid"></div>
+        </section>
+
+        <footer class="signature-section fade-in">
+          <img id="signature-image" class="signature-image hidden" alt="Signature">
+          <p id="signature-text" class="signature-text">Pass The Light</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-geo@3/dist/d3-geo.min.js" defer></script>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

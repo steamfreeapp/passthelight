@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pass The Light Admin</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="admin-body">
+    <div id="global-alert" class="global-alert hidden" role="status" aria-live="polite"></div>
+    <main class="admin-page">
+      <section class="admin-login-card" id="login-card">
+        <p class="section-eyebrow">PASS THE LIGHT ADMIN</p>
+        <h1>Manage content and future settings</h1>
+        <form id="login-form" class="stack-form">
+          <label>
+            <span>Password</span>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          </label>
+          <button type="submit" class="primary-button">Sign in</button>
+          <p class="form-message" id="login-message"></p>
+        </form>
+      </section>
+
+      <section class="admin-dashboard hidden" id="dashboard">
+        <header class="admin-header">
+          <div>
+            <p class="section-eyebrow">ADMIN DASHBOARD</p>
+            <h1>Pass The Light</h1>
+          </div>
+          <button type="button" class="ghost-button" id="logout-button">Log out</button>
+        </header>
+
+        <section class="admin-card">
+          <div class="card-heading">
+            <div>
+              <p class="section-eyebrow">SITE SETTINGS</p>
+              <h2>Core content</h2>
+            </div>
+            <button type="button" class="primary-button" id="save-site-button">Save settings</button>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span>Hero title</span>
+              <input id="hero-title-input" type="text" maxlength="80">
+            </label>
+            <label>
+              <span>Counter value</span>
+              <input id="counter-value-input" type="number" min="0">
+            </label>
+            <label class="span-2">
+              <span>Hero quote</span>
+              <input id="hero-quote-input" type="text" maxlength="160">
+            </label>
+            <label class="span-2">
+              <span>Hero image URL</span>
+              <input id="hero-image-input" type="text" placeholder="/uploads/your-hero-image.png">
+            </label>
+            <label class="span-2">
+              <span>Instructions</span>
+              <textarea id="instructions-input" rows="4"></textarea>
+            </label>
+            <label>
+              <span>Counter label</span>
+              <input id="counter-label-input" type="text" maxlength="80">
+            </label>
+            <label>
+              <span>Counter description</span>
+              <input id="counter-description-input" type="text" maxlength="120">
+            </label>
+            <label>
+              <span>Signature text</span>
+              <input id="signature-text-input" type="text" maxlength="100">
+            </label>
+            <label>
+              <span>Signature image URL</span>
+              <input id="signature-image-input" type="text" placeholder="/uploads/your-signature.png">
+            </label>
+            <label>
+              <span>Background color</span>
+              <input id="theme-background-input" type="color">
+            </label>
+            <label>
+              <span>Accent gold</span>
+              <input id="theme-accent-input" type="color">
+            </label>
+            <label>
+              <span>Soft neutral</span>
+              <input id="theme-soft-input" type="color">
+            </label>
+            <label>
+              <span>Counter background</span>
+              <input id="theme-counter-input" type="color">
+            </label>
+          </div>
+
+          <div class="inline-actions">
+            <label class="file-field">
+              <span>Upload hero image</span>
+              <input id="hero-file-input" type="file" accept="image/*">
+            </label>
+            <img id="hero-preview" class="mini-preview hidden" alt="Hero preview">
+          </div>
+
+          <div class="inline-actions">
+            <label class="file-field">
+              <span>Upload signature image</span>
+              <input id="signature-file-input" type="file" accept="image/*">
+            </label>
+            <img id="signature-preview" class="mini-preview hidden" alt="Signature preview">
+          </div>
+
+          <p class="form-message" id="site-message"></p>
+        </section>
+
+        <section class="admin-card">
+          <div class="card-heading">
+            <div>
+              <p class="section-eyebrow">GALLERY</p>
+              <h2>Add and arrange images</h2>
+            </div>
+          </div>
+
+          <form id="gallery-form" class="form-grid">
+            <label>
+              <span>Image title</span>
+              <input id="gallery-title-input" type="text" maxlength="100">
+            </label>
+            <label>
+              <span>Alt text</span>
+              <input id="gallery-alt-input" type="text" maxlength="120">
+            </label>
+            <label class="span-2">
+              <span>Image URL (optional)</span>
+              <input id="gallery-url-input" type="text" placeholder="https://... or /uploads/...">
+            </label>
+            <label class="span-2 file-field">
+              <span>Upload image file</span>
+              <input id="gallery-file-input" type="file" accept="image/*">
+            </label>
+            <div class="span-2">
+              <button type="submit" class="primary-button">Add image</button>
+            </div>
+          </form>
+
+          <div class="gallery-admin-grid" id="gallery-admin-grid"></div>
+          <p class="form-message" id="gallery-message"></p>
+        </section>
+
+        <section class="admin-card">
+          <div class="card-heading">
+            <div>
+              <p class="section-eyebrow">SECURITY</p>
+              <h2>Change admin password</h2>
+            </div>
+          </div>
+
+          <form id="password-form" class="form-grid">
+            <label>
+              <span>Current password</span>
+              <input id="current-password-input" type="password" autocomplete="current-password">
+            </label>
+            <label>
+              <span>New password</span>
+              <input id="new-password-input" type="password" autocomplete="new-password">
+            </label>
+            <div class="span-2">
+              <button type="submit" class="primary-button">Update password</button>
+            </div>
+          </form>
+          <p class="form-message" id="password-message"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="/admin.js" defer></script>
+  </body>
+</html>

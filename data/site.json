@@ -1,0 +1,35 @@
+{
+  "admin": {
+    "username": "admin",
+    "salt": "89fccefbecc8ae889ed2fad79f89521c",
+    "passwordHash": "d0f9a3f43b03b6917e0aff1c8b1c20aba90dd0ceaa9ab620578b6b28561d6cf6",
+    "sessionSecret": "a115ad4cad0795cd8344227831735f060d82a2eb10fa41a594ee68ff0cf3ff02"
+  },
+  "site": {
+    "hero": {
+      "title": "PASS THE LIGHT",
+      "quote": "To pass the light, you must BE the light.",
+      "image": "/uploads/1776182435486-whatsapp-image-2026-03-22-at-10-21-35-pm-jpeg.jpg"
+    },
+    "instructions": [
+      "ACCEPT LIGHT",
+      "PASS THE LIGHT"
+    ],
+    "counter": {
+      "value": 9,
+      "label": "חסדים טובים",
+      "description": "Good deeds shared so far."
+    },
+    "gallery": [],
+    "signature": {
+      "text": "Pass The Light",
+      "image": "/uploads/1776182554670-sign-image-2026-03-22-at-10-21-51-pm-jpeg.jpg"
+    },
+    "theme": {
+      "background": "#ffffff",
+      "accent": "#d4af37",
+      "soft": "#f5f5f5",
+      "counterBackground": "#050505"
+    }
+  }
+}

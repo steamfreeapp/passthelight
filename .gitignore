@@ -1,0 +1,5 @@
+node_modules/
+*.log
+data/claims.json
+data/light-claims.json
+data/lights.json
