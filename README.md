@@ -1,52 +1,75 @@
 # Pass The Light
 
-Node.js site and admin backend for `passthelight.live`.
+Deployable Node.js site and admin backend.
+
+Repository:
+
+- `https://github.com/steamfreeapp/passthelight`
 
 ## Requirements
 
 - Node.js 18 or newer
 
-## What should be in Git
+## Step By Step Deployment
 
-This repository is intended to be cloned onto another server and started directly.
-Keep these in Git:
-
-- `server.js`
-- `package.json`
-- `public/`
-- `data/site.json`
-- `uploads/` files referenced by `data/site.json`
-
-Do not keep runtime churn in Git:
-
-- `node_modules/`
-- `data/claims.json`
-- `data/light-claims.json`
-- `data/lights.json`
-- `*.log`
-
-The server creates missing runtime storage automatically on first start.
-
-## Deploy on another server
+### 1. Clone the repository
 
 ```bash
-git clone <your-github-url>
-cd passthelight.live
+git clone https://github.com/steamfreeapp/passthelight.git
+cd passthelight
+```
+
+### 2. Install dependencies
+
+```bash
 npm install
+```
+
+### 3. Start the site
+
+```bash
 npm start
 ```
 
-By default the app listens on port `3000`.
+The site starts on port `3000` by default.
 
-To use a different port:
+### 4. Start on a different port if needed
 
 ```bash
 PORT=8080 npm start
 ```
 
+## What Is Included
+
+- `server.js`
+- `package.json`
+- `public/`
+- `data/site.json`
+- `uploads/` images referenced by `data/site.json`
+- `.gitignore`
+- `README.md`
+
+## What Is Not Included
+
+- `node_modules/`
+- runtime claim files
+- runtime light history files
+- log files
+
+These runtime files are created automatically when the server starts.
+
 ## Notes
 
-- The app stores uploaded images in `uploads/`.
-- The app stores editable site content and admin credentials in `data/site.json`.
-- Counter claims and globe light cooldown data are recreated automatically if missing.
-- If you run behind Nginx or Apache, proxy requests to the Node.js port.
+- Site content and admin credentials are stored in `data/site.json`.
+- Uploaded site images are stored in `uploads/`.
+- If you run behind Nginx or Apache, proxy traffic to the Node.js port.
+- If you want the process to stay alive after logout, run it with a process manager such as `pm2` or `systemd`.
+
+## Quick Start
+
+```bash
+git clone https://github.com/steamfreeapp/passthelight.git
+cd passthelight
+npm install
+npm start
+```
