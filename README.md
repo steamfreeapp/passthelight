@@ -60,7 +60,6 @@ These runtime files are created automatically when the server starts.
 
 ## Notes
 
-- Site content and admin credentials are stored in `data/site.json`.
 - Uploaded site images are stored in `uploads/`.
 - If you run behind Nginx or Apache, proxy traffic to the Node.js port.
 - If you want the process to stay alive after logout, run it with a process manager such as `pm2` or `systemd`.
